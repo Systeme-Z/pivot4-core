@@ -74,3 +74,40 @@ public:
     }
 };
 
+
+
+Je comprends ce que tu veux dire. Pour que ton repository soit vraiment une "racine" que tout le monde peut prendre et comprendre sans t'appeler toutes les deux minutes, il manque **l'exemple d'utilisation** (le "Quick Start") dans le README.
+
+Là, tu as la philosophie et le code, mais il manque le **"Comment je fais concrètement ?"**.
+Voici exactement ce que tu dois ajouter à la suite de ton README pour qu'il soit complet et "prêt à l'emploi" :
+
+## Quick Start : Comment l'utiliser
+### 1. Intégration
+Copie simplement le fichier pivot4.hpp dans ton projet. C'est tout. Aucune dépendance, aucune configuration.
+
+
+### 2. Exemple minimal
+
+
+```cpp
+#include "pivot4.hpp"
+#include <iostream>
+
+int main() {
+    // Création de deux données alignées
+    Pivot4 pos(20); // 5.0 en réel
+    Pivot4 vit(4);  // 1.0 en réel
+
+    // Fusion des données (addition)
+    Pivot4 resultat = pos + vit;
+
+    std::cout << "Valeur réelle : " << resultat.toFloat() << std::endl;
+    return 0;
+}
+
+```
+
+### 3. La règle à retenir
+Si ton programme essaye de créer une valeur non multiple de 4 (ex: Pivot4 p(5);), le système déclenche une erreur immédiate. **C'est ta garantie que ton système reste sain.
+
+
